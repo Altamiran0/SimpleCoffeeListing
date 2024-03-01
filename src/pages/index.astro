@@ -1,16 +1,77 @@
 ---
-
+import Layout from "@Layouts/layout.astro";
+import CoffeeCard from "@Components/CoffeeCard/CoffeeCard.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Our products">
+	<main>
+		<h1>Our products</h1>
+
+		<p>
+			Introducing our coffee collection, a selection of unique coffees
+			from different roast types and origins, expertly roasted in small
+			batches and shipped fresh weekly.
+		</p>
+
+		<div>
+			<CoffeeCard name="Cappuccino" score={5} price={999} />
+			<CoffeeCard name="Cappuccino" score={5} price={999} />
+			<CoffeeCard name="Cappuccino" score={5} price={999} />
+			<CoffeeCard name="Cappuccino" score={5} price={999} />
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 50px;
+
+		background: var(--MainColor);
+		width: 85vw;
+		border-radius: 25px 25px 0 0;
+		padding: 100px 100px 50px;
+		margin-top: 200px;
+
+		font-size: 24px;		
+	}
+
+	h1 {
+		font-size: 1.3em;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	p {
+		font-size: 1em;
+		font-weight: 400;
+		text-align: center;
+		
+		max-width: 55ch;
+	}
+
+	div {
+		width: 100%;		
+		display: grid;
+		place-content: center;
+		grid-template-columns: repeat(auto-fit, 275px);
+		gap: 25px;
+	}
+
+	@media (max-width: 625px) {
+		main {
+			width: 100vw;
+			border-radius: 0;
+			margin: 0;
+			padding: 75px 25px 50px;
+
+			font-size: 20px;		
+		}
+	}
+
+	@media (max-width: 400px) {
+		p {	display: none; }
+	}
+</style>

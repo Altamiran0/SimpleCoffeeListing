@@ -1,0 +1,34 @@
+---
+import "./CoffeeCard.css";
+import { Image } from "astro:assets";
+
+import star from "../../../public/icons/star.svg";
+
+interface Props {
+    name: string,
+    score: number,
+    price: number
+}
+const { name, score, price } = Astro.props; 
+
+const coffeeImg = import(`../../images/coffees/${name}.jpg`);
+---
+
+<div class="CoffeeCard">
+    <Image src={coffeeImg} alt={ name } class="CoffeeCard__Img"/>
+
+    <div class="CoffeeCard__TextContainer">
+
+        <h3 class="CoffeeCard__Name">{ name }</h3>
+
+        <div class="CoffeeCard__ScoreContainer">
+            <Image src={ star } alt="starIcon" class="CoffeeCard__StarIcon" />
+            <h4 class="CoffeeCard__Score">{ score }</h4>
+        </div>
+
+        <div class="CoffeeCard__PriceContainer">
+            <h4 class="CoffeeCard__Price">${ price }</h4>
+        </div>
+    </div>    
+</div>
+

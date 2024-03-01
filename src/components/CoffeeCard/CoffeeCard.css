@@ -1,0 +1,74 @@
+.CoffeeCard {
+    width: 100%;
+
+    border-radius: var(--CommonBorder);
+    background: var(--CardColor);
+}
+
+.CoffeeCard__Img {
+    height: 150px; 
+    width: 100%;
+    object-fit: cover;
+
+    border-radius: var(--CommonBorder);
+}
+
+.CoffeeCard__TextContainer {
+    padding: 10px 15px;
+
+    display: grid;
+    gap: 5px;
+    grid-template-areas: "name  price"
+                         "score price";
+}
+
+/* ------ Name ------ */
+
+.CoffeeCard__Name {
+    grid-area: name;
+
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-overflow: ellipsis;
+}
+
+/* ------ Score ------ */
+
+.CoffeeCard__ScoreContainer {
+    grid-area: score;
+    display: flex;
+    align-items: center;
+}
+
+.CoffeeCard__StarIcon {
+    margin-right: 5px;
+}
+
+.CoffeeCard__Score {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* ------ Price ------ */
+
+.CoffeeCard__PriceContainer {
+    grid-area: price;
+
+    display: grid;
+    align-items: center;
+    justify-items: end;
+}
+
+.CoffeeCard__Price {
+    background: var(--PriceColor);
+    border-radius: var(--CommonBorder);
+    text-align: center;
+    line-height: 28px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    width: 64px;
+    height: 28px;
+}

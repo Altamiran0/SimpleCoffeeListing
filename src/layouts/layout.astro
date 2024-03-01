@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+const { title } = Astro.props;
+import backgroundImage from "../images/background__image.jpg";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="A complete coffee menu from 'Cafe La montaña'">
+		<title>{title}</title>
+	</head>
+
+	<body>
+		<Image src={backgroundImage} alt="cafeImage" class="Background__Image" />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: "InriaSans";
+		src: url("../../public/fonts/InriaSans.ttf");
+	}
+	
+	:root {
+		--BackgroundColor: #FFF0DB;
+		--MainColor: #E2D1BA;
+		--CardColor: #C4B198;
+		--PriceColor: #ae9b81;
+		--FontColor: #6C5334;
+
+		--CommonBorder: 25px;
+	}
+
+	/* format */
+
+	* {
+		color: var(--FontColor);		
+		font-family: InriaSans;	
+		letter-spacing: 1.4px;
+
+		box-sizing: border-box;
+		position: relative;
+		min-width: none;
+
+		margin: 0;
+	}
+
+	body {
+		min-height: 100dvh;
+		background: var(--BackgroundColor);
+
+		display: flex;
+		justify-content: center;
+
+		overflow-x: hidden;
+	}
+
+	h1,h2,h3,h4 {
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+	
+	/* ------------------- */
+
+	.Background__Image {
+		width: 100vw;
+		height: 350px;
+
+		object-fit: cover;
+		position: absolute;
+	}
+</style>

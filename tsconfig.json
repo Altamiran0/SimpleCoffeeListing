@@ -1,15 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "paths": {
-      "@Assets/*": ["../public/assets/*"],
-      
+    "paths": {      
       "@Components/*": ["components/*"],
-      "@Functions/*": ["functions/*"],
+      "@Images/*": ["images/*"],
       "@Layouts/*": ["layouts/*"],
-      "@Pages/*": ["pages/*"],
-      "@Services/*": ["services/*"],
-      "@Types/*": ["types/*"]
+      "@Pages/*": ["pages/*"]
     }
   },
 
